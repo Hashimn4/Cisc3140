@@ -1,0 +1,13 @@
+Part1: To get into BC's Web Linux Server, I had to first connect to it using
+ssh. I forgot what my username and password were, so I emailed Raymond Patitucci
+and he sent me an email back with my credentials. After recieving my credentials,
+I opened the terminal on my macbook by searching for it in the Applications section. 
+From there, I logged into the ssh linux server by typing 'ssh username@theiripaddress'
+and then the password they gave me. They also gave me a list of ip addresses from which
+I entered one of them. After that, it gave me access to the linux server.
+Part2: There are some programs and commands that are used in this machine. There were
+three programs that I checked: curl, git, and nano. Curl is used for urls. Git is a
+program where I can use commands to push, commit, etc, things to my repository on 
+Github. Nano is a command line text editor where I can write my notes. These notes are written
+using Nano.
+Part3: I used Nano to write my notes for this assignment. 
