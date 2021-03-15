@@ -1,6 +1,8 @@
 # Cisc3140
 The file Lab1 is a word document file on the experience of the group discussion and what my group discussed in the break out rooms on Zoom. We discussed a game called Mareeo Shooting with Them.
 The file Lab3 is about writing what skills we are qualified for and no qualified for and how do we go about learning them.
+
+
 Lab 5: For lab 5, I choses to do task 1. I used the csv file: hurricanes.csv for task 1. This file contains data of the hurricanes that have occurred from 2005 to 2015. It includes the average number of hurricanes, how many hurricanes happened per month of each year. The question I asked was: What were the hurricane statistics for the month of May? For the command line solution, I outputted my commands and the results to another file called: Session.log. To display the contents of the csv file, I used the ‘cat’ command. It displayed it, but not exactly as what the csv file showed when you download it to the computer. To find the statistics for May, I used the grep command to display the row that contained “May”. The log is shown below, but I will be uploading the Session.log file below this file in my github repository. 
 
 Terminal log: 
