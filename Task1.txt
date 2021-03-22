@@ -1,37 +1,0 @@
-Script started on Sat Mar 20 16:58:09 2021
-[1m[7m%[27m[1m[0m                                                                                ]7;file://Hashims-MBP.home/Users/hashimn4[0m[27m[24m[Jhashimn4@Hashims-MBP ~ % [K[?2004hggit  g  ccd documents/RepoMeta[?2004l
-[1m[7m%[27m[1m[0m                                                                                ]7;file://Hashims-MBP.home/Users/hashimn4/documents/RepoMeta[0m[27m[24m[Jhashimn4@Hashims-MBP RepoMeta % [K[?2004hggit init[?2004l
-Initialized empty Git repository in /Users/hashimn4/Documents/RepoMeta/.git/
-[1m[7m%[27m[1m[0m                                                                                ]7;file://Hashims-MBP.home/Users/hashimn4/documents/RepoMeta[0m[27m[24m[Jhashimn4@Hashims-MBP RepoMeta % [K[?2004hccd[?2004l
-[1m[7m%[27m[1m[0m                                                                                ]7;file://Hashims-MBP.home/Users/hashimn4[0m[27m[24m[Jhashimn4@Hashims-MBP ~ % [K[?2004hccd RepoMeta[?2004l
-cd: no such file or directory: RepoMeta
-[1m[7m%[27m[1m[0m                                                                                ]7;file://Hashims-MBP.home/Users/hashimn4[0m[27m[24m[Jhashimn4@Hashims-MBP ~ % [K[?2004hccd documents/repometa[?2004l
-[1m[7m%[27m[1m[0m                                                                                ]7;file://Hashims-MBP.home/Users/hashimn4/documents/repometa[0m[27m[24m[Jhashimn4@Hashims-MBP repometa % [K[?2004hggit status[?2004l
-On branch master
-
-No commits yet
-
-nothing to commit (create/copy files and use "git add" to track)
-[1m[7m%[27m[1m[0m                                                                                ]7;file://Hashims-MBP.home/Users/hashimn4/documents/repometa[0m[27m[24m[Jhashimn4@Hashims-MBP repometa % [K[?2004hggit add task1.txt[?2004l
-fatal: pathspec 'task1.txt' did not match any files
-[1m[7m%[27m[1m[0m                                                                                ]7;file://Hashims-MBP.home/Users/hashimn4/documents/repometa[0m[27m[24m[Jhashimn4@Hashims-MBP repometa % [K[?2004hggit add task1.txt[?2004l
-[1m[7m%[27m[1m[0m                                                                                ]7;file://Hashims-MBP.home/Users/hashimn4/documents/repometa[0m[27m[24m[Jhashimn4@Hashims-MBP repometa % [K[?2004hccd[?2004l
-[1m[7m%[27m[1m[0m                                                                                ]7;file://Hashims-MBP.home/Users/hashimn4[0m[27m[24m[Jhashimn4@Hashims-MBP ~ % [K[?2004hggit  g  ccd documents/Repo1[?2004l
-[1m[7m%[27m[1m[0m                                                                                ]7;file://Hashims-MBP.home/Users/hashimn4/documents/Repo1[0m[27m[24m[Jhashimn4@Hashims-MBP Repo1 % [K[?2004hggit init[?2004l
-Initialized empty Git repository in /Users/hashimn4/Documents/Repo1/.git/
-[1m[7m%[27m[1m[0m                                                                                ]7;file://Hashims-MBP.home/Users/hashimn4/documents/Repo1[0m[27m[24m[Jhashimn4@Hashims-MBP Repo1 % [K[?2004hggit add my_file1.txt[?2004l
-[1m[7m%[27m[1m[0m                                                                                ]7;file://Hashims-MBP.home/Users/hashimn4/documents/Repo1[0m[27m[24m[Jhashimn4@Hashims-MBP Repo1 % [K[?2004hggit commit -m ""E"d"i"t"e"d" "t"h"e" "f"i"l"e" "b"y" "a"d"d"i"n"g" "" " " " " " " w"r"i"t"i"n"g" "t"o"d"a"y"'"s" " [K[A[79Cd"a"at"e"[?2004l
-[master (root-commit) f73d2be] Edited the file by writing today's date
- 1 file changed, 1 insertion(+)
- create mode 100644 my_file1.txt
-[1m[7m%[27m[1m[0m                                                                                ]7;file://Hashims-MBP.home/Users/hashimn4/documents/Repo1[0m[27m[24m[Jhashimn4@Hashims-MBP Repo1 % [K[?2004hccd[?2004l
-[1m[7m%[27m[1m[0m                                                                                ]7;file://Hashims-MBP.home/Users/hashimn4[0m[27m[24m[Jhashimn4@Hashims-MBP ~ % [K[?2004hcdgit commit -m "Edited the file by writing today's date" [K[A[25Ccd[K[1B[K[A[27C  cdgit commit -m "Edited the file by writing today's date" [K[A[29Cadd my_file1.txt[K[1B[K[A[45C[16Dinit            [12D[8Dcd documents/Repo1[15D               [16Dgit add task1.txt[13Dstatus       [10Dcd documents/repometa[18DRepoMeta          [10D[8Ddocuments/repometa[?2004l[1B[1m[7m%[27m[1m[0m                                                                                ]7;file://Hashims-MBP.home/Users/hashimn4/documents/repometa[0m[27m[24m[Jhashimn4@Hashims-MBP repometa % [K[?2004hggit commit -m ""[1CA"d"d"e"d" "t"h"e" "t"e"x"t" "f"i"l"e" "f"o"r" "l"o"g"g"i"n"g" " [K[A[79Cm"y"y "s"e"e"" s"" " " y" " [A[79C" [K[A[78Cm"y"y "c"o"m"m"a"n"d"s"[?2004l
-On branch master
-
-Initial commit
-
-Untracked files:
-	[31mTask1.txt[m
-
-nothing added to commit but untracked files present
-[1m[7m%[27m[1m[0m                                                                                ]7;file://Hashims-MBP.home/Users/hashimn4/documents/repometa[0m[27m[24m[Jhashimn4@Hashims-MBP repometa % [K[?2004h
