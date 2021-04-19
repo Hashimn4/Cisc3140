@@ -1,0 +1,282 @@
+Last login: Thu Apr 15 09:52:43 on ttys000
+hashimn4@Hashims-MBP ~ % psql postgres
+psql (13.2)
+Type "help" for help.
+
+               
+1. postgres=# CREATE DATABASE Lab1;
+CREATE DATABASE
+2. postgres=# \l
+                             List of databases
+   Name    |  Owner   | Encoding | Collate | Ctype |   Access privileges   
+-----------+----------+----------+---------+-------+-----------------------
+ lab1      | hashimn4 | UTF8     | C       | C     | 
+ postgres  | hashimn4 | UTF8     | C       | C     | 
+ template0 | hashimn4 | UTF8     | C       | C     | =c/hashimn4          +
+           |          |          |         |       | hashimn4=CTc/hashimn4
+ template1 | hashimn4 | UTF8     | C       | C     | =c/hashimn4          +
+           |          |          |         |       | hashimn4=CTc/hashimn4
+(4 rows)
+
+3. postgres=# \c lab1
+You are now connected to database "lab1" as user "hashimn4".
+5. lab1=# CREATE TABLE CUSTOMER ( Customer_Id INT, Customer_Name CHAR (100), Street CHAR (100), City CHAR(100), State CHAR(2), ZipCode INT, Item_Id INT, Purchase_Date CHAR(20), Purchase_Time CHAR(20));
+CREATE TABLE
+4. lab1=# \dt
+          List of relations
+ Schema |   Name   | Type  |  Owner   
+--------+----------+-------+----------
+ public | customer | table | hashimn4
+(1 row)
+
+lab1=# select*from customer;
+ customer_id | customer_name | street | city | state | zipcode | item_id | purchase_date | purchase_time 
+-------------+---------------+--------+------+-------+---------+---------+---------------+---------------
+(0 rows)
+lab1=# ALTER TABLE CUSTOMER
+ALTER COLUMN Street TYPE TEXT;
+ALTER TABLE
+lab1=# ALTER TABLE CUSTOMER
+ALTER COLUMN City TYPE TEXT,
+lab1-#                     
+ALTER COLUMN State TYPE TEXT, ALTER COLUMN Purchase_Date TYPE TEXT, ALTER COLUMN Purchase_Time TYPE TEXT;
+ALTER TABLE
+lab1=# select*from customer;
+ customer_id | customer_name | street | city | state | zipcode | item_id | purchase_date | purchase_time 
+-------------+---------------+--------+------+-------+---------+---------+---------------+---------------
+(0 rows)
+                                                 
+lab1=# ALTER TABLE CUSTOMER
+ALTER COLUMN Customer_Name TYPE TEXT;
+ALTER TABLE
+                                                 
+lab1=# \dt
+          List of relations
+ Schema |   Name   | Type  |  Owner   
+--------+----------+-------+----------
+ public | customer | table | hashimn4
+(1 row)
+
+5. lab1=# INSERT into CUSTOMER (customer_id, customer_name, street, city, state, zipcode, item_id, purchase_date, purchase_time) values (123,'Alfreds Futterkiste','123 Ocean Ct','Edison','NJ',63343,2430,'current date','current time');
+INSERT 0 1
+lab1=# select*from customer;
+ customer_id |    customer_name    |    street    |  city  | state | zipcode | item_id | purchase_date | purchase_time 
+-------------+---------------------+--------------+--------+-------+---------+---------+---------------+---------------
+         123 | Alfreds Futterkiste | 123 Ocean Ct | Edison | NJ    |   63343 |    2430 | current date  | current time
+(1 row)
+5. lab1=# INSERT into CUSTOMER (customer_id, customer_name, street, city, state, zipcode, item_id, purchase_date, purchase_time) values (134,'Ana Trujillo','45 West 14th St','NYC','NY',10012,2540,'current date','current time'), (143,'Luis Hamptons','77 East Pkw','Piscataway','NJ',64334,7764,'current date','current time'), (111,'Henry Polsberg','232 Leichester Rd','Brooklyn','NY',12566,2321,'current date','current time'), (125,'Susan Mayer','222 West 45th St','NYC','NY',10036,12111,'current date','current time'), (123,'Alfreds Futterkiste','123 Ocean Ct','Edison','NJ',63343,3330,'current date','current time'), (176,'Hanna Tailor','3 West 4th St','NYC','NY',10001,1287,'current date','current time'), (134,'Ana Trujillo','45 West 4th St','NYC','NY',10012,7764,'current date','current time'), (126,'Adam Broody','234 East 3rd St','NYC','NY',10022,4533,'current date','current time'), (155,'Markus Mark','10 8th Ave','Brooklyn','NY',11220,3233,'current date','current time');
+INSERT 0 9
+lab1=# select*from customer;
+ customer_id |    customer_name    |      street       |    city    | state | zipcode | item_id | purchase_date | purchase_time 
+-------------+---------------------+-------------------+------------+-------+---------+---------+---------------+---------------
+         123 | Alfreds Futterkiste | 123 Ocean Ct      | Edison     | NJ    |   63343 |    2430 | current date  | current time
+         134 | Ana Trujillo        | 45 West 14th St   | NYC        | NY    |   10012 |    2540 | current date  | current time
+         143 | Luis Hamptons       | 77 East Pkw       | Piscataway | NJ    |   64334 |    7764 | current date  | current time
+         111 | Henry Polsberg      | 232 Leichester Rd | Brooklyn   | NY    |   12566 |    2321 | current date  | current time
+         125 | Susan Mayer         | 222 West 45th St  | NYC        | NY    |   10036 |   12111 | current date  | current time
+         123 | Alfreds Futterkiste | 123 Ocean Ct      | Edison     | NJ    |   63343 |    3330 | current date  | current time
+         176 | Hanna Tailor        | 3 West 4th St     | NYC        | NY    |   10001 |    1287 | current date  | current time
+         134 | Ana Trujillo        | 45 West 4th St    | NYC        | NY    |   10012 |    7764 | current date  | current time
+         126 | Adam Broody         | 234 East 3rd St   | NYC        | NY    |   10022 |    4533 | current date  | current time
+         155 | Markus Mark         | 10 8th Ave        | Brooklyn   | NY    |   11220 |    3233 | current date  | current time
+(10 rows)
+
+6. lab1=# select*from customer where state='NY';
+ customer_id | customer_name  |      street       |   city   | state | zipcode | item_id | purchase_date | purchase_time 
+-------------+----------------+-------------------+----------+-------+---------+---------+---------------+---------------
+         134 | Ana Trujillo   | 45 West 14th St   | NYC      | NY    |   10012 |    2540 | current date  | current time
+         111 | Henry Polsberg | 232 Leichester Rd | Brooklyn | NY    |   12566 |    2321 | current date  | current time
+         125 | Susan Mayer    | 222 West 45th St  | NYC      | NY    |   10036 |   12111 | current date  | current time
+         176 | Hanna Tailor   | 3 West 4th St     | NYC      | NY    |   10001 |    1287 | current date  | current time
+         134 | Ana Trujillo   | 45 West 4th St    | NYC      | NY    |   10012 |    7764 | current date  | current time
+         126 | Adam Broody    | 234 East 3rd St   | NYC      | NY    |   10022 |    4533 | current date  | current time
+         155 | Markus Mark    | 10 8th Ave        | Brooklyn | NY    |   11220 |    3233 | current date  | current time
+(7 rows)
+
+7. lab1=# select*from customer where city='NYC';
+ customer_id | customer_name |      street      | city | state | zipcode | item_id | purchase_date | purchase_time 
+-------------+---------------+------------------+------+-------+---------+---------+---------------+---------------
+         134 | Ana Trujillo  | 45 West 14th St  | NYC  | NY    |   10012 |    2540 | current date  | current time
+         125 | Susan Mayer   | 222 West 45th St | NYC  | NY    |   10036 |   12111 | current date  | current time
+         176 | Hanna Tailor  | 3 West 4th St    | NYC  | NY    |   10001 |    1287 | current date  | current time
+         134 | Ana Trujillo  | 45 West 4th St   | NYC  | NY    |   10012 |    7764 | current date  | current time
+         126 | Adam Broody   | 234 East 3rd St  | NYC  | NY    |   10022 |    4533 | current date  | current time
+(5 rows)
+
+8. lab1=# select*from customer where customer_id<150;
+ customer_id |    customer_name    |      street       |    city    | state | zipcode | item_id | purchase_date | purchase_time 
+-------------+---------------------+-------------------+------------+-------+---------+---------+---------------+---------------
+         123 | Alfreds Futterkiste | 123 Ocean Ct      | Edison     | NJ    |   63343 |    2430 | current date  | current time
+         134 | Ana Trujillo        | 45 West 14th St   | NYC        | NY    |   10012 |    2540 | current date  | current time
+         143 | Luis Hamptons       | 77 East Pkw       | Piscataway | NJ    |   64334 |    7764 | current date  | current time
+         111 | Henry Polsberg      | 232 Leichester Rd | Brooklyn   | NY    |   12566 |    2321 | current date  | current time
+         125 | Susan Mayer         | 222 West 45th St  | NYC        | NY    |   10036 |   12111 | current date  | current time
+         123 | Alfreds Futterkiste | 123 Ocean Ct      | Edison     | NJ    |   63343 |    3330 | current date  | current time
+         134 | Ana Trujillo        | 45 West 4th St    | NYC        | NY    |   10012 |    7764 | current date  | current time
+         126 | Adam Broody         | 234 East 3rd St   | NYC        | NY    |   10022 |    4533 | current date  | current time
+(8 rows)
+
+9. lab1=# select*from customer where customer_id>=150;
+ customer_id | customer_name |    street     |   city   | state | zipcode | item_id | purchase_date | purchase_time 
+-------------+---------------+---------------+----------+-------+---------+---------+---------------+---------------
+         176 | Hanna Tailor  | 3 West 4th St | NYC      | NY    |   10001 |    1287 | current date  | current time
+         155 | Markus Mark   | 10 8th Ave    | Brooklyn | NY    |   11220 |    3233 | current date  | current time
+(2 rows)
+
+10. lab1=# select*from customer;
+ customer_id |    customer_name    |      street       |    city    | state | zipcode | item_id | purchase_date | purchase_time 
+-------------+---------------------+-------------------+------------+-------+---------+---------+---------------+---------------
+         123 | Alfreds Futterkiste | 123 Ocean Ct      | Edison     | NJ    |   63343 |    2430 | current date  | current time
+         134 | Ana Trujillo        | 45 West 14th St   | NYC        | NY    |   10012 |    2540 | current date  | current time
+         143 | Luis Hamptons       | 77 East Pkw       | Piscataway | NJ    |   64334 |    7764 | current date  | current time
+         111 | Henry Polsberg      | 232 Leichester Rd | Brooklyn   | NY    |   12566 |    2321 | current date  | current time
+         125 | Susan Mayer         | 222 West 45th St  | NYC        | NY    |   10036 |   12111 | current date  | current time
+         123 | Alfreds Futterkiste | 123 Ocean Ct      | Edison     | NJ    |   63343 |    3330 | current date  | current time
+         176 | Hanna Tailor        | 3 West 4th St     | NYC        | NY    |   10001 |    1287 | current date  | current time
+         134 | Ana Trujillo        | 45 West 4th St    | NYC        | NY    |   10012 |    7764 | current date  | current time
+         126 | Adam Broody         | 234 East 3rd St   | NYC        | NY    |   10022 |    4533 | current date  | current time
+         155 | Markus Mark         | 10 8th Ave        | Brooklyn   | NY    |   11220 |    3233 | current date  | current time
+(10 rows)
+                              
+11. lab1=# select customer_name, street, city, state, zipcode from customer where customer_name > 'K' order by customer_name;
+ customer_name |      street      |    city    | state | zipcode 
+---------------+------------------+------------+-------+---------
+ Luis Hamptons | 77 East Pkw      | Piscataway | NJ    |   64334
+ Markus Mark   | 10 8th Ave       | Brooklyn   | NY    |   11220
+ Susan Mayer   | 222 West 45th St | NYC        | NY    |   10036
+(3 rows)
+                                                                                   
+12. lab1=# select customer_name, customer_id from customer where customer_name < 'Kate' order by customer_name;
+    customer_name    | customer_id 
+---------------------+-------------
+ Adam Broody         |         126
+ Alfreds Futterkiste |         123
+ Alfreds Futterkiste |         123
+ Ana Trujillo        |         134
+ Ana Trujillo        |         134
+ Hanna Tailor        |         176
+ Henry Polsberg      |         111
+(7 rows)
+
+13. lab1=# select distinct customer_name from customer;
+    customer_name    
+---------------------
+ Markus Mark
+ Alfreds Futterkiste
+ Henry Polsberg
+ Hanna Tailor
+ Adam Broody
+ Susan Mayer
+ Luis Hamptons
+ Ana Trujillo
+(8 rows)
+
+14. lab1=# select*from customer where customer_id between 120 and 151;
+ customer_id |    customer_name    |      street      |    city    | state | zipcode | item_id | purchase_date | purchase_time 
+-------------+---------------------+------------------+------------+-------+---------+---------+---------------+---------------
+         123 | Alfreds Futterkiste | 123 Ocean Ct     | Edison     | NJ    |   63343 |    2430 | current date  | current time
+         134 | Ana Trujillo        | 45 West 14th St  | NYC        | NY    |   10012 |    2540 | current date  | current time
+         143 | Luis Hamptons       | 77 East Pkw      | Piscataway | NJ    |   64334 |    7764 | current date  | current time
+         125 | Susan Mayer         | 222 West 45th St | NYC        | NY    |   10036 |   12111 | current date  | current time
+         123 | Alfreds Futterkiste | 123 Ocean Ct     | Edison     | NJ    |   63343 |    3330 | current date  | current time
+         134 | Ana Trujillo        | 45 West 4th St   | NYC        | NY    |   10012 |    7764 | current date  | current time
+         126 | Adam Broody         | 234 East 3rd St  | NYC        | NY    |   10022 |    4533 | current date  | current time
+(7 rows)
+
+15. lab1=# CREATE TABLE PRODUCT (Item_Id INT, Product_Description TEXT, Product_Type TEXT, Manufacturer TEXT, Origin TEXT, Quantity INT);
+CREATE TABLE
+                                                                                                                          ^
+15. lab1=# INSERT into PRODUCT values (2430, 'Ogx Shampoo', 'Cleaning', 'Ogx Group', 'USA', 5), (2540, 'Nescafe Coffee Machine', 'Small Appliances', 'Nescafe Electronics', 'USA', 13), (7764, 'Braun Mixer', 'Small Appliances', 'Braun', 'Germany', 23), (2321, 'Ogx Conditioner', 'Cleaning', 'Ogx Group', 'USA', 65), (12111, 'Emily Sofabed', 'Furniture', 'Zinus', 'China', 26), (3330, 'Earrings', 'Accessories', 'Christian Dior', 'France', 32), (1287, 'JBL Headphones', 'Electronics', 'JBL', 'USA', 2), (2888, 'Laptop', 'Electronics', 'Lenovo', 'China', 21), (5666, 'Alarm', 'Electronics', 'Sony', 'Japan', 5);
+INSERT 0 9
+16. lab1=# \dt
+          List of relations
+ Schema |   Name   | Type  |  Owner   
+--------+----------+-------+----------
+ public | customer | table | hashimn4
+ public | product  | table | hashimn4
+(2 rows)
+
+17. lab1=# select*from PRODUCT;
+ item_id |  product_description   |   product_type   |    manufacturer     | origin  | quantity 
+---------+------------------------+------------------+---------------------+---------+----------
+    2430 | Ogx Shampoo            | Cleaning         | Ogx Group           | USA     |        5
+    2540 | Nescafe Coffee Machine | Small Appliances | Nescafe Electronics | USA     |       13
+    7764 | Braun Mixer            | Small Appliances | Braun               | Germany |       23
+    2321 | Ogx Conditioner        | Cleaning         | Ogx Group           | USA     |       65
+   12111 | Emily Sofabed          | Furniture        | Zinus               | China   |       26
+    3330 | Earrings               | Accessories      | Christian Dior      | France  |       32
+    1287 | JBL Headphones         | Electronics      | JBL                 | USA     |        2
+    2888 | Laptop                 | Electronics      | Lenovo              | China   |       21
+    5666 | Alarm                  | Electronics      | Sony                | Japan   |        5
+(9 rows)
+                        
+18. lab1=# SELECT item_id, product_description, quantity FROM Product WHERE manufacturer = 'Ogx Group';
+ item_id | product_description | quantity 
+---------+---------------------+----------
+    2430 | Ogx Shampoo         |        5
+    2321 | Ogx Conditioner     |       65
+(2 rows)
+
+19. lab1=# select Product_Description, Quantity from PRODUCT;
+  product_description   | quantity 
+------------------------+----------
+ Ogx Shampoo            |        5
+ Nescafe Coffee Machine |       13
+ Braun Mixer            |       23
+ Ogx Conditioner        |       65
+ Emily Sofabed          |       26
+ Earrings               |       32
+ JBL Headphones         |        2
+ Laptop                 |       21
+ Alarm                  |        5
+(9 rows)
+                                             
+20. lab1=# SELECT item_id, product_description FROM Product WHERE Product_Type = 'Cleaning';
+ item_id | product_description 
+---------+---------------------
+    2430 | Ogx Shampoo
+    2321 | Ogx Conditioner
+(2 rows)
+
+21. lab1=# SELECT Manufacturer FROM Product WHERE Origin = 'China';
+ manufacturer 
+--------------
+ Zinus
+ Lenovo
+(2 rows)
+               
+22. lab1=# SELECT Item_Id, Manufacturer FROM Product WHERE Quantity < 10;
+ item_id | manufacturer 
+---------+--------------
+    2430 | Ogx Group
+    1287 | JBL
+    5666 | Sony
+(3 rows)
+
+23. lab1=# SELECT Manufacturer FROM Product WHERE Product_Type = 'Electronics' OR Product_Type = 'Furniture';
+ manufacturer 
+--------------
+ Zinus
+ JBL
+ Lenovo
+ Sony
+(4 rows)
+
+24. lab1=# SELECT Customer.Customer_name, Customer.Customer_Id, Customer.Item_Id, Product.Product_Description FROM Customer INNER JOIN Product ON Customer.Item_Id = Product.Item_Id;
+    customer_name    | customer_id | item_id |  product_description   
+---------------------+-------------+---------+------------------------
+ Alfreds Futterkiste |         123 |    2430 | Ogx Shampoo
+ Ana Trujillo        |         134 |    2540 | Nescafe Coffee Machine
+ Ana Trujillo        |         134 |    7764 | Braun Mixer
+ Luis Hamptons       |         143 |    7764 | Braun Mixer
+ Henry Polsberg      |         111 |    2321 | Ogx Conditioner
+ Susan Mayer         |         125 |   12111 | Emily Sofabed
+ Alfreds Futterkiste |         123 |    3330 | Earrings
+ Hanna Tailor        |         176 |    1287 | JBL Headphones
+(8 rows)
+
+25. lab1=# SELECT Customer.Customer_name FROM Customer INNER JOIN Product ON Customer.Item_Id = Product.Item_Id WHERE Product.Product_Type = 'Electronics';
+ customer_name 
+---------------
+ Hanna Tailor
+(1 row)
