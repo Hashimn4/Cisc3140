@@ -1,4 +1,6 @@
 # Cisc3140
+Lab9: Lab9.docx contains an explanation for the assignment and Lab9SQLLAB1 contains the SQL code that I did for the assignment.
+
 The file Lab1 is a word document file on the experience of the group discussion and what my group discussed in the break out rooms on Zoom. We discussed a game called Mareeo Shooting with Them.
 The file Lab3 is about writing what skills we are qualified for and no qualified for and how do we go about learning them.
 
@@ -54,3 +56,4 @@ Script started on Mon Mar 15 13:39:23 2021
 
 [0m[27m[24m[Jhashimn4@Hashims-MBP downloads % [K[?2004h
 ![image](https://user-images.githubusercontent.com/61445847/111200548-44c1b200-8598-11eb-85b7-58953b7d796a.png)
+
