@@ -1,4 +1,6 @@
 # Cisc3140
+lab10: lab10. html contains the html code for the assignment, lab10,css contains the css code, and lab10description.docx contains the description for my solution code.
+
 Lab9: Lab9.docx contains an explanation for the assignment and Lab9SQLLAB1 contains the SQL code that I did for the assignment.
 
 The file Lab1 is a word document file on the experience of the group discussion and what my group discussed in the break out rooms on Zoom. We discussed a game called Mareeo Shooting with Them.
